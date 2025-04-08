@@ -1,0 +1,1450 @@
+@charset "UTF-8";
+main,main section {
+  max-width: none;
+}
+main {
+  margin-top: 120px;
+}
+main a {
+  text-decoration: none;
+  color: inherit;
+}
+main ul,main li {
+  list-style: none;
+}
+main span {
+  font-size: unset;
+}
+section p {
+  text-align: unset;
+}
+footer {
+  padding-top: 0;
+}
+@media only screen and (max-width: 1800px) {
+  main {
+    margin-top: 132px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  main {
+    margin-top: 0;
+  }
+  footer {
+    padding-top: 20px;
+  }
+}
+/* saleの場合、これを記述（画面幅max表示） */
+.section-eyecatch {
+  margin-top: 3px;
+  max-width:none;
+  width:100%;
+}
+/* フッターのズレた部を分修正 */
+.section-top-brand-list, .section-breadcrumb {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* saleのh1周辺の調整 */
+.li-brand-title {
+  font-size: 20px;
+}
+/* 下部のEVENT / FAIR部分 */
+.sub-en {
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .section-eyecatch {
+    padding-top: 4px;
+  }
+  .li-brand-title {
+    font-size: 16px;
+    color: #2f2f2f;
+    margin-top: 3%;
+  }
+  h1 {
+    color: #2f2f2f;
+  }
+}
+
+/* ----------------------------------
+    reset
+----------------------------------- */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*::before,*::after { 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+}  
+body,h1,h2,h3,h4,h5,span,p {
+  margin: 0px;
+  padding: 0px;
+}
+html { /* スムーズスクロール */
+  scroll-behavior: smooth;
+}
+body {
+  color: #000000;
+  background-color: #ffffff;
+  font-optical-sizing: auto;
+}
+ol,ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto; 
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+}
+a{
+  cursor: pointer;
+}
+input[type=text], input[type=tel], input[type=email], input[type=esubmit], button, select, textarea {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+.search {
+  text-align: center;
+}
+/* ----------------------------------
+    基本レイアウト
+----------------------------------- */
+#wrapper {
+  overflow: hidden;
+  background: #F5F1EC;
+}
+.main_width {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+@media only screen and (max-width: 1024px) {
+  .main_width {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main_width {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .main_width {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+.narrow_width {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home_section {
+  padding-top: 150px;
+} 
+@media only screen and (max-width: 768px) {
+  .home_section {
+    padding-top: 84px;
+  }
+}
+/* フォント */
+.section_title h2, .mv .mv_title h2 span, .item_text h4, .item_text h5 span, .item_text p, .item_info p, .item_info h4, .pick_point_1 h5,
+.pick_point_1 p, .pick_point_2, .pick_point_2 h5, .pick_point_2 p, .item a .allitems_name p, .btn_category_text p:nth-child(2), 
+.btn_item_page a span, .btn_item_page a, .btn_all_items a {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+.section_title h3, .section_title h3 span, .mv p, .intro_text h2, .intro_text p, .btn_category_text p:nth-child(1),
+.text_slider_wrap span, .number::before, .category::after, .btn_nav {
+  font-family: "Zen Old Mincho", serif;
+}
+
+/* ----------------------------------
+    共通パーツ
+----------------------------------- */
+/* ブランド別タイトル */
+.section_title {
+  margin-bottom: 130px;
+  text-align: center;
+}
+.section_title h3 {
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 1.1em;
+  font-weight: 500;
+  position: relative;
+}
+.section_title h3::before {
+  position: absolute;
+  content: "";
+  display: block;
+  border-bottom: 1px solid #000;
+  width: 84px;
+  bottom: -0.4em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section_title h2 {
+  font-size: 18px;
+  letter-spacing: 0.07em;
+  text-align: center;
+  display: inline-block; /* 文字数に応じて幅が変わる */
+  color: white;
+  background: #A79C83;
+  padding: 3px 46px 4px;
+  font-weight: 500;
+}
+@media only screen and (max-width:1024px) {
+  .section_title {
+    margin-bottom: 80px;
+  }
+  .section_title h3 {
+    font-size: 34px;
+  }
+  .section_title h2 {
+    font-size: 16px;
+    padding: 3px 44px 4px;
+  }
+}
+@media only screen and (max-width:768px) {
+  .section_title h3 {
+    font-size: 26px;
+  }
+  .section_title h2 {
+    font-size: 14px;
+    padding: 3px 38px 4px;
+  }
+}
+@media only screen and (max-width:336px) {
+  .section_title h2 {
+    padding: 3px 22px 4px;
+  }
+}
+/* スクロール時fadeUpアニメーション */
+.fadeUpTrigger {
+  opacity: 0;
+}
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes fadeUpAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------
+    hero
+----------------------------------- */
+#hero {
+  background-image: url("/images/sale/spring_brandjewelry2025/hero_back.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 120px;
+  padding-bottom: 170px;
+}
+.mv {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.mv .mv_visual::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("/images/sale/spring_brandjewelry2025/title_deco.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 522px;
+  height: 178px;
+  rotate: -18deg;
+  bottom: -84px;
+  right: -108px;
+  z-index: 2;
+}
+.mv .mv_title {
+  position: absolute;
+  top: 56px;
+  left: -54px;
+}
+.mv .mv_title h2 {
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  line-height: 2;
+  color: white;
+}
+.mv .mv_title h2 span {
+  font-weight: 500;
+}
+.mv .mv_title h2 span {
+  display: inline;
+  background: #A79C83;
+  padding: 3px 28px 3px 16px;
+  box-decoration-break: clone; /* 複数行のときに背景を適用 */
+  -webkit-box-decoration-break: clone; /* Safari対応 */
+}
+.mv p {
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0.07em;
+  color: #A79C83;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-left: 4px;
+}
+@media only screen and (max-width:1024px) {
+  #hero {
+    padding-left: 98px;
+    padding-right: 98px;
+    padding-top: 178px;
+    padding-bottom: 180px;
+  }
+  .mv .mv_visual::before {
+    width: 385px;
+    height: 131px;
+    rotate: -20deg;
+    bottom: -54px;
+    right: -81px;
+  }
+  .mv .mv_title {
+    top: -92px;
+    left: 0px;
+  }
+  .mv .mv_title h2 {
+    font-size: 18px;
+  }
+  .mv .mv_title h2 span {
+    padding: 3px 28px 3px 16px;
+  }
+  .mv p {
+    font-size: 12px;
+    margin-top: 12px;
+    margin-left: 2px;
+  }
+}
+@media only screen and (max-width:768px) {
+  #hero {
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+  .mv .mv_visual::before {
+    width: 300px;
+    height: 102px;
+    rotate: -20deg;
+    bottom: -68px;
+    right: -36px;
+  }
+  .mv .mv_title {
+    top: -88px;
+    left: 0px;
+  }
+  .mv .mv_title h2 {
+    font-size: 16px;
+  }
+  .mv .mv_title h2 span {
+    padding: 3px 28px 3px 16px;
+  }
+  .mv p {
+    font-size: 10px;
+  }
+}@media only screen and (max-width:600px) {
+  #hero {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .mv .mv_visual::before {
+    width: 200px;
+    height: 68px;
+    rotate: -24deg;
+    bottom: -70px;
+    right: -20px;
+  }
+}
+
+/* hero表示時アニメーション */
+#hero {
+  opacity: 0;
+  will-change: opacity;
+  animation: fadeIn 4s ease forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mv_visual img {
+  opacity: 0;
+  transform: scale(0.99);
+  will-change: opacity, transform;
+  animation: fadeUpScale 1s ease forwards;
+  animation-delay: 0.6s;
+}
+@keyframes fadeUpScale {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mv_title, .mv p {
+  opacity: 0;
+  transform: translateY(10px);
+  will-change: opacity, transform;
+  animation: fadeUp 1s ease forwards;
+}
+.hero-animate .mv_title {
+  animation-delay: 1.4s;
+}
+.hero-animate .mv p {
+  animation-delay: 1.6s;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mv_visual::before {
+  opacity: 0;
+  transform: translateY(4px);
+  will-change: opacity, transform;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1.8s;
+}
+
+/* ----------------------------------
+    intro
+----------------------------------- */
+#intro {
+  background: #fff;
+  padding-bottom: 150px;
+  position: relative;
+}
+.intro_text h2 {
+  font-size: 26px;
+  line-height: 2.5;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.intro_text h2 .kaigyo_1 {
+  display: none;
+}
+.intro_text h2 .kaigyo_2 {
+  display: none;
+}
+.intro_text p {
+  font-size: 16px;
+  line-height: 3.2;
+  letter-spacing: 0.07em;
+  text-align: center;
+  font-weight: 400;
+}
+@media only screen and (max-width:1024px) {
+  .intro_text {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .intro_text h2 {
+    font-size: 20px;
+    line-height: 2.7;
+    letter-spacing: 0.1em;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .intro_text h2 .kaigyo_2 {
+    display: block;
+  }
+  .intro_text p {
+    font-size: 15px;
+    line-height: 3.1;
+    text-align: left;
+  }
+  .intro_text p br:nth-child(n+2) {
+    display: none;
+  }
+}
+@media only screen and (max-width:768px) {
+  #intro {
+    padding-bottom: 98px;
+  }
+  .intro_text {
+    max-width: 350px;
+  }
+  .intro_text h2 .kaigyo_1 {
+    display: block;
+  }
+  .intro_text h2 .kaigyo_2 {
+    display: none;
+  }
+}
+@media only screen and (max-width:356px) {
+  .intro_text h2 {
+    font-size: 18px;
+    line-height: 2.5;
+    margin-bottom: 28px;
+  }
+  .intro_text p {
+    font-size: 14px;
+    line-height: 2.6;
+  }
+}
+
+/* ----------------------------------
+    intro slider
+----------------------------------- */
+/* slideを重ねた分の高さの余白調整 */
+#cartier_area  { padding-top: 30px;} 
+@media only screen and (max-width: 768px) {
+  .cartier_area { padding-top: 64px; }
+}
+.intro_slider {
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  z-index: 2;
+  position: relative;
+  width: 100vw;
+  height: 160px;
+  overflow: hidden;
+}
+.slider-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.slide-item {
+  width: 92px;
+  height: auto;
+  margin-right: 90px;
+  margin-top: 40px;
+  display: inline-block;
+}
+.slide-item:nth-child(3n) {
+  margin-right: 120px;
+}
+@media only screen and (max-width:1024px) {
+  .intro_slider {
+    bottom: 64px;
+    height: 100px;
+  }
+  .slide-item {
+    width: 56px;
+    margin-right: 60px;
+    margin-top: 30px;
+  }
+  .slide-item:nth-child(3n) {
+    margin-right: 90px;
+  }
+}
+
+/* ----------------------------------
+    各ブランド商品エリア
+----------------------------------- */
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 56px;
+  margin-bottom: 138px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.items .item {
+  width: 330px;
+}
+.items .item:nth-child(even){
+  margin-top: 74px;
+}
+@media only screen and (max-width:845px) {
+  .items {
+    justify-content: center;
+    gap: 110px;
+    margin-bottom: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .items .item {
+    width: 330px;
+  }
+  .items .item:nth-child(even){
+    margin-top: 0;
+  }
+}
+.items .item .item_text {
+  width: 96%;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item_text h4 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 22px;
+}
+.item_text h5 {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.95;
+  color: white;
+  margin-bottom: 20px;
+}
+.item_text h5 span {
+  display: inline;
+  background: #A79C83;
+  font-weight: 600;
+  padding: 2px 24px 3px 10px;
+  box-decoration-break: clone; /* 複数行のときに背景を適用 */
+  -webkit-box-decoration-break: clone; /* Safari対応 */
+}
+@media only screen and (max-width:350px) {
+  .item_text h5 {
+    font-size: 14px;
+  }
+}
+.item_text p {
+  font-size: 14px;
+  line-height: 2.2;
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+/* ----------------------------------
+    ピックアップ商品
+----------------------------------- */
+.pick_item {
+  background-image: url("/images/sale/spring_brandjewelry2025/pick_backimage_1.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 684px;
+}
+.pick_item .pick_box {
+  background: #fff;
+  transform: translateY(-62px);
+  position: relative;
+}
+.pick_item .pick_box::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("/images/sale/spring_brandjewelry2025/title_deco.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 68px;
+  top: 12px;
+  left: -16px;
+  rotate: -18deg;
+}
+.pick_item .pick_box::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 409px;
+  height: 279px;
+  bottom: -35px;
+  right: -68px;
+}
+.pick_item .pickimage_car::after { background-image: url("/images/sale/spring_brandjewelry2025/pick_item_image_car.png");}
+.pick_item .pickimage_tif::after { background-image: url("/images/sale/spring_brandjewelry2025/pick_item_image_tif.jpg");}
+.pick_item .pickimage_van::after { background-image: url("/images/sale/spring_brandjewelry2025/pick_item_image_van.jpg");}
+.pick_item .pickimage_her::after { background-image: url("/images/sale/spring_brandjewelry2025/pick_item_image_her.jpg");}
+
+.pick_description {
+  max-width: 939px;
+  height: 548px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 104px;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 46px;
+  position: relative;
+}
+.item_info {
+  max-width: 236px;
+  height: auto;
+}
+.item_info h4 {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.item_info p {
+  font-size: 10px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+.item_info p + p {
+  margin-top: 4px;
+}
+.pick_description .pick_image {
+  width: 335px;
+  height: 335px;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+.pick_point_1 {
+  position: absolute;
+  top: 104px;
+  right: 35px;
+  max-width: 225px;
+}
+.pick_point_1 h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  position: relative;
+}
+.pick_point_1 h5::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 337px;
+  height: 63px;
+  background-image: url("/images/sale/spring_brandjewelry2025/point_1_line.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 40px;
+  right: -10px;
+}
+.pick_point_1 p {
+  font-size: 14px;
+  line-height: 2.2;
+  font-weight: 400;
+}
+.pick_point_2 {
+  position: absolute;
+  bottom: 42px;
+  left: 35px;
+  max-width: 225px;
+  font-weight: 400;
+}
+.pick_point_2 h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  position: relative;
+}
+.pick_point_2 h5::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 302px;
+  height: 45px;
+  background-image: url("/images/sale/spring_brandjewelry2025/point_2_line.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: -20px;
+  left: -10px;
+}
+.pick_point_2 p {
+  font-size: 14px;
+  line-height: 2.2;
+  font-weight: 400;
+}
+.pick_box .btn_item_page {
+  padding-bottom: 80px;
+}
+@media only screen and (max-width:1024px) {
+  .pick_item .pick_box::after {
+    width: 340px;
+    height: 232px;
+  }
+}
+@media only screen and (max-width:900px) {
+  .pick_item {
+    height: 988px;
+  }
+  .pick_item .pick_box::after {
+    width: 238px;
+    height: 161px;
+    bottom: 151px;
+    right: -14px;
+  }
+  .pick_description {
+    height: 820px;
+    padding-top: 114px;
+  }
+  .pick_description .pick_image {
+    top: 39%;
+  }
+  .pick_point_1 {
+    top: 200px;
+    right: 45px;
+    max-width: 248px;
+  }
+  .pick_point_2 {
+    bottom: 52px;
+    left: 45px;
+    max-width: 248px;
+  }
+}
+@media only screen and (max-width:650px) {
+  .pick_item {
+    height: 1326px;
+  }
+  .pick_item .pick_box {
+    height: 1262px;
+    transform: translateY(-56px);
+  }
+  .pick_item .pick_box::before {
+    width: 160px;
+    height: 54px;
+    top: 10px;
+    left: -14px;
+    rotate: -16deg;
+  }
+  .pick_item .pick_box::after {
+    width: 300px;
+    height: 206px;
+    bottom: -30px;
+    right: -24px;
+  }
+  .pick_description {
+    max-width: 869px;
+    height: 976px;
+    padding-top: 104px;
+  }
+  .pick_description .pick_image {
+    width: 262px;
+    height: 262px;
+    top: 50%;
+  }
+  .pick_point_1 {
+    top: 300px;
+    max-width: 210px;
+  }
+  .pick_point_1 h5 {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .pick_point_1 h5::before {
+    width: 239px;
+    height: 172px;
+    background-image: url("/images/sale/spring_brandjewelry2025/point_1_line_sp.png");
+    top: 36px;
+  }
+  .pick_point_1 p {
+    font-size: 12px;
+  }
+  .pick_point_2 {
+    bottom: 42px;
+    left: 35px;
+    max-width: 210px;
+  }
+  .pick_point_2 h5 {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+  .pick_point_2 h5::before {
+    width: 239px;
+    height: 96px;
+    background-image: url("/images/sale/spring_brandjewelry2025/point_2_line_sp.png");
+    bottom: -18px;
+  }
+  .pick_point_2 p {
+    line-height: 2;
+  }
+}
+
+/* ----------------------------------
+    ALL ITEMS
+----------------------------------- */
+#all_items {
+  background: #fff;
+  padding-bottom: 120px;
+}
+.all_items_wrap {
+  max-width: 1258px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.items_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 134px;
+  margin-bottom: 200px;
+}
+.items_wrap:last-child {
+  margin-bottom: 0;
+}
+.item {
+  width: 330px;
+}
+.item a .item_image {
+  width: 100%;
+}
+.item a .allitems_name {
+  width: 100%;
+}
+.item a .allitems_name p {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.75;
+  font-weight: 400;
+  margin: 10px 6px 0;
+}
+/* カテゴリータイトルボタン */
+.btn_category {
+  width: 330px;
+  height: 330px;
+  cursor: pointer;
+  background: #A79C83;
+  transition: 0.5s;
+}
+.btn_category:hover {
+  background: #BCB197;
+  transition: 0.5s;
+}
+.btn_category a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.btn_category a .btn_category_text {
+  color: #fff;
+}
+.btn_category_text p:nth-child(1) {
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 600;
+  position: relative;
+}
+.btn_category_text p:nth-child(1)::before {
+  position: absolute;
+  content: "";
+  display: block;
+  border-bottom: solid 1px #fff;
+  width: 80px;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn_category_text p:nth-child(2) {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  font-weight: 600;
+}
+.btn_category_text p:nth-child(3) {
+  font-size: 16px;
+  text-align: center;
+  transform: scale(1, 0.5);
+  margin-top: 8px;
+}
+@media only screen and (max-width:1350px) {
+  .all_items_wrap {
+    max-width: 1000px;
+  }
+  .items_wrap {
+    gap: 98px;
+    margin-bottom: 180px;
+  }
+  .item {
+    width: 268px;
+  }
+  /* カテゴリータイトルボタン */
+  .btn_category {
+    width: 268px;
+    height: 268px;
+  }
+}
+@media only screen and (max-width:1024px) {
+  .all_items_wrap {
+    max-width: 800px;
+  }
+  .items_wrap {
+    gap: 70px;
+    margin-bottom: 138px;
+  }
+  .item {
+    width: 220px;
+  }
+  .item a .allitems_name p {
+    font-size: 12px;
+    margin: 6px 4px 0;
+  }
+  /* カテゴリータイトルボタン */
+  .btn_category {
+    width: 220px;
+    height: 220px;
+  }
+  .btn_category_text p:nth-child(1) {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  .btn_category_text p:nth-child(1)::before {
+    width: 60px;
+    bottom: -10px;
+  }
+  .btn_category_text p:nth-child(2) {
+    font-size: 13px;
+  }
+  .btn_category_text p:nth-child(3) {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+}
+@media only screen and (max-width:860px) {
+  #all_items {
+    padding-bottom: 100px;
+  }
+  .all_items_wrap {
+    max-width: 510px;
+  }
+  .items_wrap {
+    gap: 70px;
+    margin-bottom: 100px;
+  }
+  .item {
+    width: 220px;
+  }
+  .item a .allitems_name p {
+    font-size: 12px;
+    margin: 6px 4px 0;
+  }
+  /* カテゴリータイトルボタン */
+  .btn_category {
+    width: 220px;
+    height: 220px;
+  }
+  .btn_category_text p:nth-child(1) {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  .btn_category_text p:nth-child(1)::before {
+    width: 60px;
+    bottom: -10px;
+  }
+  .btn_category_text p:nth-child(2) {
+    font-size: 13px;
+  }
+  .btn_category_text p:nth-child(3) {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+}
+@media only screen and (max-width:590px) {
+  #all_items {
+    padding-bottom: 60px;
+  }
+  .all_items_wrap {
+    max-width: 375px;
+  }
+  .items_wrap {
+    gap: 35px;
+    margin-bottom: 80px;
+  }
+  .item {
+    width: 170px;
+  }
+  .item a .allitems_name p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 5px 3px 0;
+  }
+  /* カテゴリータイトルボタン */
+  .btn_category {
+    width: 170px;
+    height: 170px;
+  }
+  .btn_category_text p:nth-child(1) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .btn_category_text p:nth-child(1)::before {
+    width: 40px;
+    bottom: -8px;
+  }
+  .btn_category_text p:nth-child(2) {
+    font-size: 10px;
+    line-height: 1;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width:415px) {
+  #all_items {
+    padding-bottom: 60px;
+  }
+  .all_items_wrap {
+    max-width: 348px;
+  }
+  .items_wrap {
+    gap: 36px;
+    margin-bottom: 70px;
+  }
+  .item {
+    width: 156px;
+  }
+  .item a .allitems_name p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 5px 3px 0;
+  }
+  /* カテゴリータイトルボタン */
+  .btn_category {
+    width: 156px;
+    height: 156px;
+  }
+  .btn_category_text p:nth-child(1) {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+  .btn_category_text p:nth-child(1)::before {
+    width: 32px;
+    bottom: -6px;
+  }
+}
+@media only screen and (max-width:360px) {
+  .all_items_wrap {
+    max-width: 326px;
+  }
+  .items_wrap {
+    gap: 14px;
+  }
+}
+@media only screen and (max-width:340px) {
+  .all_items_wrap {
+    max-width: 292px;
+  }
+  .items_wrap {
+    gap: 10px;
+    margin-bottom: 56px;
+  }
+  .item {
+    width: 138px;
+    margin-bottom: 20px;
+  }
+  /* カテゴリータイトルボタン */
+  .btn_category {
+    width: 138px;
+    height: 138px;
+  }
+  .btn_category_text p:nth-child(1) {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  .btn_category_text p:nth-child(1)::before {
+    width: 30px;
+    bottom: -5px;
+  }
+}
+
+/* ----------------------------------
+    text slide
+----------------------------------- */
+.text_slider {
+  background: #fff;
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding-top: 40px;
+}
+.text_slider_wrap {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  /* 方向、速度調整 */
+  animation: text_slider_anim 150s linear infinite;
+}
+.text_slider_wrap span {
+  display: inline-block;
+  font-size: 110px;
+  letter-spacing: 0.05em;
+  color: rgb(230, 227, 221);
+  font-weight: bold;
+  margin-right: 76px;
+}
+@keyframes text_slider_anim {
+  from { transform: translateX(0);}
+  to { transform: translateX(-50%);}
+}
+@media only screen and (max-width:1024px) {
+  .text_slider {
+    padding-top: 42px;
+  }
+  .text_slider_wrap span {
+    font-size: 76px;
+    margin-right: 62px;
+  }
+}
+@media only screen and (max-width:768px) {
+  .text_slider {
+    padding-top: 30px;
+  }
+  .text_slider_wrap span {
+    font-size: 54px;
+    margin-right: 38px;
+  }
+}
+
+/* ----------------------------------
+    共通（ボタン）
+----------------------------------- */
+/* ボタン（商品詳細はこちら） */
+.btn_item_page {
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn_item_page a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 13px;
+  font-weight: 400;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 240px;
+  height: 40px;
+  padding: 8px 20px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  cursor: pointer; /* クリック可能に */
+}
+.btn_item_page a span {
+  font-weight: 400;
+}
+.btn_item_page a::after {
+  background: #A79C83;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+.arrow {
+  margin-left: 8px;
+  font-size: 8px;
+}
+.btn_item_page a:hover {
+  color: white;
+  border: 1px solid #A79C83;
+  border-radius: 20px;
+}
+.btn_item_page a:hover::after {
+  transform: scale(1, 1);
+}
+/* ボタン（すべての商品一覧） */
+.btn_all_items {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 182px;
+}
+.btn_all_items a {
+  width: 100%;
+  max-width: 470px;
+  height: 84px;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: #fff;
+  background-color: #A79C83;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 6px 28px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn_all_items a:hover {
+  background-color: #beb49d;
+  transition: 0.5s;
+}
+@media only screen and (max-width:768px) {
+  .btn_all_items {
+    margin-left: 36px;
+    margin-right: 36px;
+    margin-bottom: 140px;
+  }
+  .btn_all_items a {
+    max-width: 346px;
+    height: 70px;
+    font-size: 14px;
+  }
+}
+
+/* ----------------------------------
+    共通（商品写真周りの疑似要素）
+----------------------------------- */
+.item_image {
+  position: relative;
+}
+/* 番号01-04 */
+.number::before {
+  position: absolute;
+  display: block;
+  font-size: 28px;
+  text-align: left;
+  color: #726B5A;
+  font-weight: 600;
+  bottom: -16px;
+  left: 8px;
+}
+.number_01::before { content: "01";}
+.number_02::before { content: "02";}
+.number_03::before { content: "03";}
+.number_04::before { content: "04";}
+
+/* カテゴリー RING-BRACELET */
+.category::after {
+  position: absolute;
+  display: block;
+  font-size: 12px;
+  text-align: left;
+  color: #726B5A;
+  font-weight: bold;
+  transform: rotate(90deg);
+}
+.category_ring::after { content: "RING"; top: 10px; right: -26px;}
+.category_necklace::after { content: "NECKLACE"; top: 28px; right: -44px;}
+.category_earrings::after { content: "EARRINGS"; top: 28px; right: -44px;}
+.category_bracelet::after { content: "BRACELET"; top: 28px; right: -44px;}
+
+/* ----------------------------------
+    nav
+----------------------------------- */
+.nav_wrapper {
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  margin-left: 50px;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+}
+.btn_nav {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  display: inline;
+  font-size: 20px;
+  line-height: 1;
+  margin: 7px 1px;
+  color: #000;
+}
+.btn_nav::after {
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+.btn_nav:hover {
+  color: white;
+}
+.btn_nav:hover::after {
+  transform: scale(1, 1);
+}
+.nav_wrapper a:nth-child(1) { width: 4.65em;}
+.nav_wrapper a:nth-child(2) { width: 4.65em;}
+.nav_wrapper a:nth-child(4) { width: 4.65em;}
+.nav_wrapper a:nth-child(5) { width: 5.75em;}
+
+/* アンカーリンクの着地点 */
+#cartier_area {
+  scroll-margin-top: 140px;
+}
+#tiffany_area, #vancleef_area, #hermes_area, #all_items {
+  scroll-margin-top: 0px;
+}
+@media only screen and (max-width:768px) {
+  .nav_wrapper {
+    width: 102px;
+    bottom: 0;
+    margin-left: 12px;
+    margin-bottom: 10px;
+  }
+  .btn_nav {
+    font-size: 17px;
+    line-height: 0.95;
+  }
+  /* スムーズスクロールの着地点 */
+  #cartier_area {
+    scroll-margin-top: 100px;
+  }
+  #cartier_are,#tiffany_area, #vancleef_area, #hermes_area, #all_items {
+    scroll-margin-top: 50px;
+  }
+}
